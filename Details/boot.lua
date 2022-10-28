@@ -42,6 +42,7 @@ do
 		_detalhes.debug_chr = false
 		_detalhes.opened_windows = 0
 		_detalhes.last_combat_time = 0
+		_detalhes._ascension = true
 
 	--> containers
 		--> armazenas as fun��es do parser - All parse functions
@@ -548,6 +549,27 @@ do
 			["DRUID"] = true,
 			["DEATHKNIGHT"] = true,
 			["HERO"] = true,
+			["NECROMANCER"] = true,
+			["PYROMANCER"] = true,
+			["CULTIST"] = true,
+			["STARCALLER"] = true,
+			["SUNCLERIC"] = true,
+			["TINKER"] = true,
+			["SPIRITMAGE"] = true,
+			["WILDWALKER"] = true,
+			["REAPER"] = true,
+			["PROPHET"] = true,
+			["CHRONOMANCER"] = true,
+			["SONOFARUGAL"] = true,
+			["GUARDIAN"] = true,
+			["STORMBRINGER"] = true,
+			["DEMONHUNTER"] = true,
+			["BARBARIAN"] = true,
+			["WITCHDOCTOR"] = true,
+			["WITCHHUNTER"] = true,
+			["FLESHWARDEN"] = true,
+			["MONK"] = true,
+			["RANGER"] = true,
 		}
 		_detalhes.classstring_to_classid = {
 			["WARRIOR"] = 1,
@@ -560,7 +582,28 @@ do
 			["MAGE"] = 8,
 			["WARLOCK"] = 9,
 			["DRUID"] = 10,
-			["HERO"]= 10, -- Uses same id as druid.
+			["HERO"]= 11,
+			["NECROMANCER"] = 12,
+			["PYROMANCER"] = 13,
+			["CULTIST"] = 14,
+			["STARCALLER"] = 15,
+			["SUNCLERIC"] = 16,
+			["TINKER"] = 17,
+			["SPIRITMAGE"] = 18,
+			["WILDWALKER"] = 19,
+			["REAPER"] = 20,
+			["PROPHET"] = 21,
+			["CHRONOMANCER"] = 22,
+			["SONOFARUGAL"] = 23,
+			["GUARDIAN"] = 24,
+			["STORMBRINGER"] = 25,
+			["DEMONHUNTER"] = 26,
+			["BARBARIAN"] = 27,
+			["WITCHDOCTOR"] = 28,
+			["WITCHHUNTER"] = 29,
+			["FLESHWARDEN"] = 30,
+			["MONK"] = 31,
+			["RANGER"] = 32,
 		}
 		_detalhes.classid_to_classstring = {
 			[1] = "WARRIOR",
@@ -572,7 +615,29 @@ do
 			[7] = "SHAMAN",
 			[8] = "MAGE",
 			[9] = "WARLOCK",
-			[10] = "HERO", -- note: "DRUID" can't be retrieved from this table as it shares id with "HERO"
+			[10] = "DRUID",
+			[11] = "HERO",
+			[12] = "NECROMANCER",
+			[13] = "PYROMANCER",
+			[14] = "CULTIST",
+			[15] = "STARCALLER",
+			[16] = "SUNCLERIC",
+			[17] = "TINKER",
+			[18] = "SPIRITMAGE",
+			[19] = "WILDWALKER",
+			[20] = "REAPER",
+			[21] = "PROPHET",
+			[22] = "CHRONOMANCER",
+			[23] = "SONOFARUGAL",
+			[24] = "GUARDIAN",
+			[25] = "STORMBRINGER",
+			[26] = "DEMONHUNTER",
+			[27] = "BARBARIAN",
+			[28] = "WITCHDOCTOR",
+			[29] = "WITCHHUNTER",
+			[30] = "FLESHWARDEN",
+			[31] = "MONK",
+			[32] = "RANGER",
 		}
 
 		_detalhes.segmentos = {

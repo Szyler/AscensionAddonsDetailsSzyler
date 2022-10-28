@@ -1498,7 +1498,11 @@ local elvui_skin = function()
 		else
 			local coords = CLASS_ICON_TCOORDS [class]
 			if (coords) then
-				info.classe_icone:SetTexture ([[Interface\Glues\CHARACTERCREATE\UI-CHARACTERCREATE-CLASSES]])
+				if bit.contains(Enum.ClassMask.COA, Enum.ClassMask[class]) then
+					info.classe_icone:SetTexture ([[Interface\Glues\CHARACTERCREATE\UI-CHARACTERCREATE-CLASSES]])
+				else
+					info.classe_icone:SetTexture ([[Interface\Glues\CHARACTERCREATE\-UI-CHARACTERCREATE-CLASSES]])
+				end
 				local l, r, t, b = unpack (coords)
 				info.classe_icone:SetTexCoord (l+0.01953125, r-0.01953125, t+0.01953125, b-0.01953125)
 			else

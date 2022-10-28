@@ -669,12 +669,6 @@ local default_profile = {
 	--> class icons and colors
 		class_icons_small = [[Interface\AddOns\Details\images\classes_small]],
 		class_coords = {
-			["HERO"] = {
-				0.7421875, -- [1]
-				0.98828125, -- [2]
-				0, -- [3]
-				0.25, -- [4]
-			},
 			["HUNTER"] = {
 				0, -- [1]
 				0.25, -- [2]
@@ -777,14 +771,9 @@ local default_profile = {
 				0.25, -- [3]
 				0.5, -- [4]
 			},
-			},
+		},
 
 		class_colors = {
-			["HERO"] = {
-				0, -- [1]
-				1, -- [2]
-				0, -- [3]
-			},
 			["HUNTER"] = {
 				0.67, -- [1]
 				0.83, -- [2]
@@ -1129,7 +1118,15 @@ local default_profile = {
 		},
 
 }
+for class, color in pairs(RAID_CLASS_COLORS) do 
+	if not default_profile.class_coords[class] then
+		default_profile.class_coords[class] = { unpack(CLASS_ICON_TCOORDS[class])}
+	end
 
+	if not default_profile.class_colors[class] then
+		default_profile.class_colors[class] = { color:GetRGB() }
+	end
+end
 _detalhes.default_profile = default_profile
 
 
