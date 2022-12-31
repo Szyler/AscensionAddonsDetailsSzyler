@@ -60,9 +60,9 @@ local assert, loadstring, error = assert, loadstring, error
 local bucketCache = setmetatable({}, {__mode='k'})
 
 --[[
-	 xpcall safecall implementation
+	 pcall safecall implementation
 ]]
-local xpcall = xpcall
+local pcall = pcall
 
 local function errorhandler(err)
 	return geterrorhandler()(err)
@@ -70,7 +70,13 @@ end
 
 local function safecall(func, ...)
 	if func then
-		return xpcall(func, errorhandler, ...)
+		local ok, err = pcall(func, ...)
+		if ok then
+			return true
+		else
+			errorhandler(err)
+			return false
+		end
 	end
 end
 
