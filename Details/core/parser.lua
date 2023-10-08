@@ -1356,7 +1356,7 @@ function parser:spell_dmg(token, time, who_serial, who_name, who_flags, alvo_ser
 				end
 			-- check if we have twin val'kyr dark essence and we took shadow damage
 			elseif absorb.spellid == 65684 then
-				if bit.cotanins(0x20, spelltype) == spelltype then
+				if _bit_contains(0x20, spelltype) == spelltype then
 					-- see above
 					--found_absorb = absorb
 					--break
