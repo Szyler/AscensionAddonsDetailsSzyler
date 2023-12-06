@@ -412,6 +412,78 @@ do --> data for The Eye
 	})
 end
 
+do --> data for Hyjal Summit
+	local INSTANCE_MAPID = 776 -- map id
+	local HDIMAGESPATH = "Details\\images\\raid"
+	local HDFILEPREFIX = "HyjalSummit"
+	local LOADINGSCREEN_FILE, LOADINGSCREEN_COORDS = "LOADSCREENHYJALSUMMIT", {0, 1, 285/1024, 875/1024}
+	local EJ_DUNGEONBG = "ui-ej-dungeonbutton-hyjalsummit"
+	local EJ_LOREBG = "ui-ej-lorebg-hyjalsummit"
+
+	local PORTRAIT_LIST = {
+		"ui-ej-boss-rage winterchill",
+		"ui-ej-boss-anetheron",
+		"ui-ej-boss-kaz'rogal",
+		"ui-ej-boss-azgalor",
+		"ui-ej-boss-archimonde",
+		"ui-ej-boss-chromius",
+	}
+
+
+	local ENCOUNTER_ID_CL = {
+		17767, 17808, 17888, 17842, 17968, 92179,
+		[17767] = 1, -- Rage Winterchill
+		[17808] = 2, -- Anetheron
+		[17888] = 3, -- Kaz'rogal
+		[17842] = 4, -- Azgalor
+		[17968] = 5, -- Archimonde
+		[92179] = 6, -- Chromius
+	}
+
+	--> install the raid
+	local BOSSNAMES = {
+		LBB["Rage Winterchill"],
+		LBB["Anetheron"],
+		LBB["Kaz'rogal"],
+		LBB["Azgalor"],
+		LBB["Archimonde"],
+		LBB["Chromius"],
+	}
+
+	local ENCOUNTERS = {}
+
+	for i = 1, #PORTRAIT_LIST do
+		local encounterTable = {
+			boss = BOSSNAMES[i],
+			portrait = "Interface\\EncounterJournal\\"..PORTRAIT_LIST[i],
+		}
+		tinsert(ENCOUNTERS, encounterTable)
+	end
+
+	_detalhes:InstallEncounter({
+		id = INSTANCE_MAPID, --map id
+		name = LBZ["Hyjal Summit"],
+		icons = "Interface\\AddOns\\"..HDIMAGESPATH.."\\"..HDFILEPREFIX.."_BossFaces",
+		icon = "Interface\\EncounterJournal\\"..EJ_DUNGEONBG,
+		is_raid = true,
+		backgroundFile = {file = "Interface\\Glues\\LOADINGSCREENS\\"..LOADINGSCREEN_FILE, coords = LOADINGSCREEN_COORDS},
+		backgroundEJ = "Interface\\EncounterJournal\\"..EJ_LOREBG,
+
+		encounter_ids2 = ENCOUNTER_ID_CL,
+		boss_names = BOSSNAMES,
+		encounters = ENCOUNTERS,
+
+		boss_ids = {
+			[17767] = 1, -- Rage Winterchill
+			[17808] = 2, -- Anetheron
+			[17888] = 3, -- Kaz'rogal
+			[17842] = 4, -- Azgalor
+			[17968] = 5, -- Archimonde
+			[92179] = 6, -- Chromius
+		},
+	})
+end
+
 -- WotLK
 
 do --> data for Onyxia's Lair

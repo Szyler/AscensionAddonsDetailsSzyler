@@ -121,7 +121,14 @@ do
 				[19516] = 2, -- Void Reaver
 				[18805] = 3, -- High Astromancer Solarian
 				[19622] = 4, -- Kael'thas Sunstrider
-
+			-- Hyjal Summit
+				[17767] = 1, -- Rage Winterchill
+				[17808] = 2, -- Anetheron
+				[17888] = 3, -- Kaz'rogal
+				[17842] = 4, -- Azgalor
+				[17968] = 5, -- Archimonde
+				[92179] = 6, -- Chromius
+				
 			-- Onyxia's Lair
 				[10184] = 1, -- Onyxia
 			-- The Ruby Sanctum
