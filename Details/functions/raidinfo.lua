@@ -413,7 +413,7 @@ do --> data for The Eye
 end
 
 do --> data for Hyjal Summit
-	local INSTANCE_MAPID = 776 -- map id
+	local INSTANCE_MAPID = 796 -- map id
 	local HDIMAGESPATH = "Details\\images\\raid"
 	local HDFILEPREFIX = "HyjalSummit"
 	local LOADINGSCREEN_FILE, LOADINGSCREEN_COORDS = "LOADSCREENHYJALSUMMIT", {0, 1, 285/1024, 875/1024}
@@ -483,6 +483,93 @@ do --> data for Hyjal Summit
 		},
 	})
 end
+
+do --> data for Black Temple
+	local INSTANCE_MAPID = 776 -- map id
+	local HDIMAGESPATH = "Details\\images\\raid"
+	local HDFILEPREFIX = "BlackTemple"
+	local LOADINGSCREEN_FILE, LOADINGSCREEN_COORDS = "LOADSCREENBLACKTEMPLE", {0, 1, 285/1024, 875/1024}
+	local EJ_DUNGEONBG = "ui-ej-dungeonbutton-blacktemple"
+	local EJ_LOREBG = "ui-ej-lorebg-blacktemple"
+
+	local PORTRAIT_LIST = {
+		"ui-ej-boss-High Warlord Naj'entus",
+		"ui-ej-boss-Supremus",
+		"ui-ej-boss-Shade of Akama",
+		"ui-ej-boss-Teron Gorefiend",
+		"ui-ej-boss-Gurtogg Bloodboil",
+		"ui-ej-boss-Reliquary of Souls",
+		"ui-ej-boss-Mother Shahraz",
+		"ui-ej-boss-The Illidari Council",
+		"ui-ej-boss-Illidan Stormrage",
+	}
+
+
+	local ENCOUNTER_ID_CL = {
+		22887, 22898, 22841, 22871, 22948, 22856, 22947, 23426, 22917,
+		[22887] = 1, -- High Warlord Naj'entus
+		[22898] = 2, -- Supremus
+		[22841] = 3, -- Shade of Akama
+		[22871] = 4, -- Teron Gorefiend
+		[22948] = 5, -- Gurtogg Bloodboil
+		[22856] = 6, -- Reliquary of Souls
+		[22947] = 7, -- Mother Shahraz
+		[23426] = 8, -- The Illidari Council
+		[22917] = 9, -- Illidan Stormrage
+	}
+
+	--> install the raid
+	local BOSSNAMES = {
+		LBB["High Warlord Naj'entus"],
+		LBB["Supremus"],
+		LBB["Shade of Akama"],
+		LBB["Teron Gorefiend"],
+		LBB["Gurtogg Bloodboil"],
+		LBB["Reliquary of Souls"],
+		LBB["Mother Shahraz"],
+		LBB["The Illidari Council"],
+		LBB["Illidan Stormrage"]
+	}
+
+	local ENCOUNTERS = {}
+
+	for i = 1, #PORTRAIT_LIST do
+		local encounterTable = {
+			boss = BOSSNAMES[i],
+			portrait = "Interface\\EncounterJournal\\"..PORTRAIT_LIST[i],
+		}
+		tinsert(ENCOUNTERS, encounterTable)
+	end
+
+	_detalhes:InstallEncounter({
+		id = INSTANCE_MAPID, --map id
+		name = LBZ["Black Temple"],
+		icons = "Interface\\AddOns\\"..HDIMAGESPATH.."\\"..HDFILEPREFIX.."_BossFaces",
+		icon = "Interface\\EncounterJournal\\"..EJ_DUNGEONBG,
+		is_raid = true,
+		backgroundFile = {file = "Interface\\Glues\\LOADINGSCREENS\\"..LOADINGSCREEN_FILE, coords = LOADINGSCREEN_COORDS},
+		backgroundEJ = "Interface\\EncounterJournal\\"..EJ_LOREBG,
+
+		encounter_ids2 = ENCOUNTER_ID_CL,
+		boss_names = BOSSNAMES,
+		encounters = ENCOUNTERS,
+
+		boss_ids = {
+			[22887] = 1, -- High Warlord Naj'entus
+			[22898] = 2, -- Supremus
+			[22841] = 3, -- Shade of Akama
+			[22871] = 4, -- Teron Gorefiend
+			[22948] = 5, -- Gurtogg Bloodboil
+			[22856] = 6, -- Reliquary of Souls
+			[22947] = 7, -- Mother Shahraz
+			[23426] = 8, -- The Illidari Council
+			[22917] = 9, -- Illidan Stormrage
+		},
+	})
+end
+
+-- -- map id for sunwell:789
+
 
 -- WotLK
 

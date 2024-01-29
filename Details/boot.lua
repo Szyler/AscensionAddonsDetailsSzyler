@@ -128,6 +128,16 @@ do
 				[17842] = 4, -- Azgalor
 				[17968] = 5, -- Archimonde
 				[92179] = 6, -- Chromius
+			-- Black Temple
+				[22887] = 1, -- High Warlord Naj'entus
+				[22898] = 2, -- Supremus
+				[22841] = 3, -- Shade of Akama
+				[22871] = 4, -- Teron Gorefiend
+				[22948] = 5, -- Gurtogg Bloodboil
+				[22856] = 6, -- Reliquary of Souls
+				[22947] = 6, -- Mother Shahraz
+				[23426] = 6, -- The Illidari Council
+				[22917] = 6, -- Illidan Stormrage
 				
 			-- Onyxia's Lair
 				[10184] = 1, -- Onyxia
