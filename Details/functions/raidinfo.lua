@@ -319,7 +319,7 @@ do --> data for Blackwing Lair
 	})
 end
 
-do --> data for Ahn'Qiraj Ruins
+do --> data for Ruins of Ahn'Qiraj
 	local INSTANCE_MAPID = 718
 	local HDIMAGESPATH = "Details\\images\\raid"
 	local HDFILEPREFIX = "AhnQirajRuins"
@@ -368,7 +368,7 @@ do --> data for Ahn'Qiraj Ruins
 
 	_detalhes:InstallEncounter({
 		id = INSTANCE_MAPID, --map id
-		name = LBZ["Ahn'Qiraj Ruins"],
+		name = LBZ["Ruins of Ahn'Qiraj"],
 		icons = "Interface\\AddOns\\"..HDIMAGESPATH.."\\"..HDFILEPREFIX.."_BossFaces",
 		icon = "Interface\\EncounterJournal\\"..EJ_DUNGEONBG,
 		is_raid = true,
@@ -390,7 +390,7 @@ do --> data for Ahn'Qiraj Ruins
 	})
 end
 
-do --> data for Ahn'Qiraj Temple
+do --> data for Temple of Ahn'Qiraj
 	local INSTANCE_MAPID = 767
 	local HDIMAGESPATH = "Details\\images\\raid"
 	local HDFILEPREFIX = "AhnQirajTemple"
@@ -431,7 +431,7 @@ do --> data for Ahn'Qiraj Temple
 		LBB["Fankriss the Unyielding"],
 		LBB["Viscidus"],
 		LBB["Princess Huhuran"],
-		LBB["TheTwinEmperors"],
+		LBB["The Twin Emperors"],
 		LBB["Ouro"],
         LBB["C'Thun"],
 	}
@@ -448,7 +448,7 @@ do --> data for Ahn'Qiraj Temple
 
 	_detalhes:InstallEncounter({
 		id = INSTANCE_MAPID, --map id
-		name = LBZ["Ahn'Qiraj Temple"],
+		name = LBZ["Temple of Ahn'Qiraj"],
 		icons = "Interface\\AddOns\\"..HDIMAGESPATH.."\\"..HDFILEPREFIX.."_BossFaces",
 		icon = "Interface\\EncounterJournal\\"..EJ_DUNGEONBG,
 		is_raid = true,
