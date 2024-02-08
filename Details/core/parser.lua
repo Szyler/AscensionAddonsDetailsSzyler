@@ -165,6 +165,10 @@ local override_spellId = {
 
 	[32175] = 17364, -- shaman Stormstrike(from Turkar on github)
 	[32176] = 17364, -- shaman Stormstrike
+
+    [760193] = 760050, -- Gloomblade
+    [760050] = 760050, -- Gloomblade
+    [760187] = 760050, -- Gloomblade
 }
 
 local bitfield_debuffs_ids = _detalhes.BitfieldSwapDebuffsIDs
