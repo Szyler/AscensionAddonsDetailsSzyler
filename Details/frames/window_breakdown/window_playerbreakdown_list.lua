@@ -240,13 +240,13 @@ local createPlayerScrollBox = function(breakdownWindowFrame, breakdownSideMenu, 
 		local actorTotal = self.playerObject.total
 		local combatObject = self.combatObject
 
-		-- we dont have warcraft logs or any percentile stuff.
-		self.percentileText:SetText("N/A")
-		self.percentileText:SetAlpha(0.25)
+		-- -- we dont have warcraft logs or any percentile stuff.
+		-- self.percentileText:SetText("N/A")
+		-- self.percentileText:SetAlpha(0.25)
 
 		Details222.BreakdownWindow.ApplyFontSettings(self.playerName)
 		Details222.BreakdownWindow.ApplyFontSettings(self.itemLevelText)
-		Details222.BreakdownWindow.ApplyFontSettings(self.percentileText)
+		-- Details222.BreakdownWindow.ApplyFontSettings(self.percentileText)
 
 		Details222.BreakdownWindow.ApplyTextureSettings(self.totalStatusBar)
 
@@ -268,7 +268,7 @@ local createPlayerScrollBox = function(breakdownWindowFrame, breakdownSideMenu, 
 		{text = "", width = 20},
 		{text = "Player Name", width = 100},
 		{text = "iLvL", width = 30},
-		{text = "WCL Parse", width = 60},
+		-- {text = "WCL Parse", width = 60},
 	}
 	local headerOptions = {
 		padding = 2,
@@ -323,9 +323,9 @@ local createPlayerScrollBox = function(breakdownWindowFrame, breakdownSideMenu, 
 		itemLevelText.textcolor = {1, 1, 1, .7}
 		itemLevelText.textsize = 11
 
-		local percentileText = detailsFramework:CreateLabel(OTTFrame, "", "GameFontNormal")
-		percentileText.textcolor = {1, 1, 1, .7}
-		percentileText.textsize = 11
+		-- local percentileText = detailsFramework:CreateLabel(OTTFrame, "", "GameFontNormal")
+		-- percentileText.textcolor = {1, 1, 1, .7}
+		-- percentileText.textsize = 11
 
 		local rankText = detailsFramework:CreateLabel(OTTFrame, "", "GameFontNormal")
 		rankText.textcolor = {.3, .3, .3, .7}
@@ -348,12 +348,12 @@ local createPlayerScrollBox = function(breakdownWindowFrame, breakdownSideMenu, 
 		line.rankText = rankText
 		line.totalStatusBar = totalStatusBar
 		line.itemLevelText = itemLevelText
-		line.percentileText = percentileText
+		-- line.percentileText = percentileText
 
 		line:AddFrameToHeaderAlignment(specIcon)
 		line:AddFrameToHeaderAlignment(playerName)
 		line:AddFrameToHeaderAlignment(itemLevelText)
-		line:AddFrameToHeaderAlignment(percentileText)
+		-- line:AddFrameToHeaderAlignment(percentileText)
 
 		line:AlignWithHeader(breakdownWindowFrame.PlayerSelectionHeader, "left")
 
