@@ -1,7 +1,6 @@
+
 do
-
 	local DF = _G ["DetailsFramework"]
-
 	if (not DF or not DetailsFrameworkCanLoad) then
 		return
 	end
@@ -9,38 +8,10 @@ do
 	DF.alias_text_colors = DF.alias_text_colors or {}
 
 	local defaultColors = {
-		["HUNTER"] = {0.67, 0.83, 0.45},
-		["WARLOCK"] = {0.58, 0.51, 0.79},
-		["PRIEST"] = {1.0, 1.0, 1.0},
-		["PALADIN"] = {0.96, 0.55, 0.73},
-		["MAGE"] = {0.41, 0.8, 0.94},
-		["ROGUE"] = {1.0, 0.96, 0.41},
-		["DRUID"] = {1.0, 0.49, 0.04},
-		["SHAMAN"] = {0.0, 0.44, 0.87},
-		["WARRIOR"] = {0.78, 0.61, 0.43},
-		["DEATHKNIGHT"] = {0.77, 0.12, 0.23},
-		["HERO"] = { RAID_CLASS_COLORS["HERO"]:GetRGB() },
-		["NECROMANCER"] = { RAID_CLASS_COLORS["NECROMANCER"]:GetRGB() },
-		["PYROMANCER"] = { RAID_CLASS_COLORS["PYROMANCER"]:GetRGB() },
-		["CULTIST"] = { RAID_CLASS_COLORS["CULTIST"]:GetRGB() },
-		["STARCALLER"] = { RAID_CLASS_COLORS["STARCALLER"]:GetRGB() },
-		["SUNCLERIC"] = { RAID_CLASS_COLORS["SUNCLERIC"]:GetRGB() },
-		["TINKER"] = { RAID_CLASS_COLORS["TINKER"]:GetRGB() },
-		["SPIRITMAGE"] = { RAID_CLASS_COLORS["SPIRITMAGE"]:GetRGB() },
-		["WILDWALKER"] = { RAID_CLASS_COLORS["WILDWALKER"]:GetRGB() },
-		["REAPER"] = { RAID_CLASS_COLORS["REAPER"]:GetRGB() },
-		["PROPHET"] = { RAID_CLASS_COLORS["PROPHET"]:GetRGB() },
-		["CHRONOMANCER"] = { RAID_CLASS_COLORS["CHRONOMANCER"]:GetRGB() },
-		["SONOFARUGAL"] = { RAID_CLASS_COLORS["SONOFARUGAL"]:GetRGB() },
-		["GUARDIAN"] = { RAID_CLASS_COLORS["GUARDIAN"]:GetRGB() },
-		["STORMBRINGER"] = { RAID_CLASS_COLORS["STORMBRINGER"]:GetRGB() },
-		["DEMONHUNTER"] = { RAID_CLASS_COLORS["DEMONHUNTER"]:GetRGB() },
-		["BARBARIAN"] = { RAID_CLASS_COLORS["BARBARIAN"]:GetRGB() },
-		["WITCHDOCTOR"] = { RAID_CLASS_COLORS["WITCHDOCTOR"]:GetRGB() },
-		["WITCHHUNTER"] = { RAID_CLASS_COLORS["WITCHHUNTER"]:GetRGB() },
-		["FLESHWARDEN"] = { RAID_CLASS_COLORS["FLESHWARDEN"]:GetRGB() },
-		["MONK"] = { RAID_CLASS_COLORS["MONK"]:GetRGB() },
-		["RANGER"] = { RAID_CLASS_COLORS["RANGER"]:GetRGB() },
+
+		["dark1"] = {0.1215, 0.1176, 0.1294},
+		["dark2"] = {0.2215, 0.2176, 0.2294},
+		["dark3"] = {0.3215, 0.3176, 0.3294},
 
 		["aliceblue"] = {0.941176, 0.972549, 1, 1},
 		["antiquewhite"] = {0.980392, 0.921569, 0.843137, 1},
@@ -86,6 +57,7 @@ do
 		["dimgrey"] = {0.411765, 0.411765, 0.411765, 1},
 		["dodgerblue"] = {0.117647, 0.564706, 1, 1},
 		["firebrick"] = {0.698039, 0.133333, 0.133333, 1},
+		["firebrickdark"] = {0.258039, 0.033333, 0.033333, 1},
 		["floralwhite"] = {1, 0.980392, 0.941176, 1},
 		["forestgreen"] = {0.133333, 0.545098, 0.133333, 1},
 		["fuchsia"] = {1, 0, 1, 1},
@@ -187,12 +159,16 @@ do
 		["yellowgreen"] = {0.603922, 0.803922, 0.196078, 1}
 	}
 
+	for class, color in pairs(RAID_CLASS_COLORS) do
+		defaultColors[class] = { color.r, color.g, color.b }
+	end
+
 	function DF:GetDefaultColorList()
 		return defaultColors
 	end
 
-	for colorName, colorTable in pairs (defaultColors) do
-		DF.alias_text_colors [colorName] = colorTable
+	for colorName, colorTable in pairs(defaultColors) do
+		DF.alias_text_colors[colorName] = colorTable
 	end
 
 end
